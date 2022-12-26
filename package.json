@@ -1,0 +1,38 @@
+{
+  "name": "tiktok-live-support",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "engines" : { 
+    "node" : ">=16 <17"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./_server/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./_server/index.js",
+    "nuxt": "nuxt",
+    "build": "nuxt build"
+  },
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^4.0.3",
+    "@nuxtjs/pwa": "^3.3.5",
+    "body-parser": "^1.20.0",
+    "core-js": "^3.19.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "nuxt": "^2.15.8",
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2",
+    "tiktok-live-connector": "^1.0.2",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.20",
+    "sass": "^1.55.0",
+    "sass-loader": "^10.3.1"
+  }
+}

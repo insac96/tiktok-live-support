@@ -1,0 +1,8 @@
+{
+    "ignore": [
+        "dist/**",
+        ".nuxt/**",
+        "node_modules/**",
+        "_server/public/**"
+    ]
+}

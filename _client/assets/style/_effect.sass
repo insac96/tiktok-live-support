@@ -1,0 +1,75 @@
+// Zoom
+@keyframes zoom-effect 
+  0%
+    opacity: 0
+    transform: scale(0)
+  
+  100%
+    opacity: 1
+    transform: scale(1)
+
+.zoom-enter-active 
+  animation: zoom-effect .25s ease forwards
+.zoom-leave-active 
+  animation: zoom-effect .25s reverse ease forwards
+
+// Show
+@keyframes show-effect 
+  0% 
+    opacity: 0
+  
+  100% 
+    opacity: 1
+
+.show-enter-active 
+  animation: show-effect .25s ease forwards
+.show-leave-active 
+  animation: show-effect .25s reverse ease forwards
+
+// Up
+@keyframes up-effect 
+  0% 
+    opacity: 0
+    transform: translateY(100%)
+  
+  100% 
+    opacity: 1
+    transform: translateY(0)
+
+.up-enter-active 
+  animation: up-effect .25s ease forwards
+.up-leave-active 
+  animation: up-effect .25s reverse ease forwards
+
+// Down
+@keyframes down-effect 
+  0% 
+    opacity: 0
+    transform: translateY(-100%)
+  
+  100% 
+    opacity: 1
+    transform: translateY(0)
+
+.down-enter-active 
+  animation: down-effect .25s ease forwards
+.down-leave-active 
+  animation: down-effect .25s reverse ease forwards
+
+// Spin
+@keyframes spin-effect 
+  from
+    transform: rotate(0deg)
+  to 
+    transform: rotate(360deg)
+
+.spin
+  animation: spin-effect 2s infinite linear
+
+// List
+.list-enter-active, .list-leave-active
+  transition: all 0.5s
+  
+.list-enter, .list-leave-to
+  opacity: 0
+  transform: translateY(-200%)
