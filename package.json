@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
-  "engines" : { 
-    "node" : ">=16 <17"
+  "engines": {
+    "node": ">=16 <17"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./_server/index.js",
