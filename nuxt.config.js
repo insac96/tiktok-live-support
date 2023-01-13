@@ -29,7 +29,7 @@ module.exports = {
   ],
 
   plugins: [
-    { src: '@/plugins/socket.js', mode: 'client' }
+    { src: '@/plugins/socket.js', mode: 'client' },
   ],
 
   components: true,
