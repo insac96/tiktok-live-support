@@ -8,8 +8,8 @@ export default class BootScene extends Scene {
 
     preload () {
         this.loadMap()
-        this.loadGun()
-        this.loadPlayer()
+        this.loadCharacter()
+        this.loadZombie()
     }
 
     create () {
@@ -22,25 +22,46 @@ export default class BootScene extends Scene {
         }
     }
 
-    loadGun () {
-        //for (let i = 1; i <= 10; i++) {
-            //this.load.image(`Gun_${i}`, require(`@/assets/game/gun/${i}/main.png`))
-            //this.load.image(`Gun_${i}_Bullet`, require(`@/assets/game/gun/${i}/bullet.png`))
-        //}
+    loadCharacter () {
+        for (let i = 1; i <= 3; i++) {
+            this.load.spritesheet(`Character_${i}`, require(`@/assets/game/character/${i}/Idle.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Idle`, require(`@/assets/game/character/${i}/Idle.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Run`, require(`@/assets/game/character/${i}/Run.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Walk`, require(`@/assets/game/character/${i}/Walk.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Hurt`, require(`@/assets/game/character/${i}/Hurt.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Jump`, require(`@/assets/game/character/${i}/Jump.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Dead`, require(`@/assets/game/character/${i}/Dead.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Attack_1`, require(`@/assets/game/character/${i}/Attack_1.png`), { frameWidth: 128, frameHeight: 128 })
+            this.load.spritesheet(`Character_${i}_Attack_2`, require(`@/assets/game/character/${i}/Attack_2.png`), { frameWidth: 128, frameHeight: 128 })
 
-        for (let i = 1; i <= 4; i++) {
-            this.load.image(`Shoot_${i}`, require(`@/assets/game/shoot/${i}.png`))
+            if(i==2){
+                this.load.spritesheet(`Character_${i}_Attack_3`, require(`@/assets/game/character/${i}/Attack_3.png`), { frameWidth: 128, frameHeight: 128, endFrame: 11 })
+            }
+            else {
+                this.load.spritesheet(`Character_${i}_Attack_3`, require(`@/assets/game/character/${i}/Attack_3.png`), { frameWidth: 128, frameHeight: 128 })
+            }
+
+            if(i==3){
+                this.load.spritesheet(`Character_${i}_Bullet`, require(`@/assets/game/character/${i}/Bullet.png`), { frameWidth: 64, frameHeight: 128, endFrame: 4 })
+                this.load.spritesheet(`Character_${i}_Bullet_End`, require(`@/assets/game/character/${i}/Bullet.png`), { frameWidth: 64, frameHeight: 128, startFrame: 5 })
+            }
+            else {
+                this.load.spritesheet(`Character_${i}_Bullet`, require(`@/assets/game/character/${i}/Bullet.png`), { frameWidth: 64, frameHeight: 64, endFrame: 4 })
+                this.load.spritesheet(`Character_${i}_Bullet_End`, require(`@/assets/game/character/${i}/Bullet.png`), { frameWidth: 64, frameHeight: 64, startFrame: 5 })
+            }
         }
     }
 
-    loadPlayer () {
+    loadZombie () {
         for (let i = 1; i <= 3; i++) {
-            this.load.spritesheet(`Player_${i}`, require(`@/assets/game/player/${i}/Idle.png`), { frameWidth: 48, frameHeight: 48 })
-            this.load.spritesheet(`Player_${i}_Idle`, require(`@/assets/game/player/${i}/Idle.png`), { frameWidth: 48, frameHeight: 48 })
-            this.load.spritesheet(`Player_${i}_Run`, require(`@/assets/game/player/${i}/Run.png`), { frameWidth: 48, frameHeight: 48 })
-            this.load.spritesheet(`Player_${i}_Walk`, require(`@/assets/game/player/${i}/Walk.png`), { frameWidth: 48, frameHeight: 48 })
-            //this.load.image(`Player_${i}_Hand`, require(`@/assets/game/player/${i}/Hand.png`))
-            //this.load.image(`Player_${i}_Hand_Shoot`, require(`@/assets/game/player/${i}/Hand_Shoot.png`))
+            this.load.spritesheet(`Zombie_${i}`, require(`@/assets/game/zombie/${i}/Idle.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Idle`, require(`@/assets/game/zombie/${i}/Idle.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Run`, require(`@/assets/game/zombie/${i}/Run.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Walk`, require(`@/assets/game/zombie/${i}/Walk.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Hurt`, require(`@/assets/game/zombie/${i}/Hurt.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Jump`, require(`@/assets/game/zombie/${i}/Jump.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Dead`, require(`@/assets/game/zombie/${i}/Dead.png`), { frameWidth: 96, frameHeight: 96 })
+            this.load.spritesheet(`Zombie_${i}_Attack`, require(`@/assets/game/zombie/${i}/Attack.png`), { frameWidth: 96, frameHeight: 96 })
         }
     }
 }
